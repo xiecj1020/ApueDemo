@@ -1,0 +1,35 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.0"
+
+    defaultConfig {
+        applicationId "com.crab.test.apuedemo"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            // Tells Gradle to find the root CMake build script in the same
+            // directory as the module's build.gradle file. Gradle requires this
+            // build script to add your CMake project as a build dependency and
+            // pull your native sources into your Android project.
+            path "CMakeLists.txt"
+        }
+    }
+}
+
+dependencies {
+}
