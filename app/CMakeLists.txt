@@ -18,6 +18,15 @@ add_library( # Specifies the name of the library.
 
              # Provides a relative path to your source file(s).
         src/main/cpp/HelloJni.cpp)
+add_library( # Specifies the name of the library.
+        chapterOneJni
+
+        # Sets the library as a shared library.
+        SHARED
+
+        # Provides a relative path to your source file(s).
+        src/main/cpp/ChapterOneJni.cpp)
+
 include_directories(src/main/cpp/include/)
 find_library( # Defines the name of the path variable that stores the
               # location of the NDK library.
@@ -29,6 +38,9 @@ find_library( # Defines the name of the path variable that stores the
 # Links your native library against one or more other native libraries.
 target_link_libraries( # Specifies the target library.
                        hellojni
-
+                       # Links the log library to the target library.
+                       ${log-lib} )
+target_link_libraries( # Specifies the target library.
+                        chapterOneJni
                        # Links the log library to the target library.
                        ${log-lib} )

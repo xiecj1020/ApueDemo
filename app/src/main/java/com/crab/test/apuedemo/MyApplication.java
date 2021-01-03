@@ -14,16 +14,21 @@
  * limitations under the License.
  */
 
-#include <android/log.h>
-#include "include/com_crab_test_apuedemo_jni_HelloJni.h"
-#define TAG "mytag"
-#ifdef __cplusplus
-extern "C" {
-#endif
-JNIEXPORT void JNICALL Java_com_crab_test_apuedemo_jni_HelloJni_sayHello
-        (JNIEnv *env, jclass clazz){
-    __android_log_print(ANDROID_LOG_ERROR, TAG, "Native say Hello World.");
+package com.crab.test.apuedemo;
+
+import android.app.Application;
+import android.util.Log;
+
+public class MyApplication extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Log.e("mytag", "MyApplication onCreate=" + this);
+    }
+
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+        Log.e("mytag", "MyApplication onTerminate=" + this);
+    }
 }
-#ifdef __cplusplus
-}
-#endif

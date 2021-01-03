@@ -14,16 +14,26 @@
  * limitations under the License.
  */
 
-#include <android/log.h>
-#include "include/com_crab_test_apuedemo_jni_HelloJni.h"
-#define TAG "mytag"
-#ifdef __cplusplus
-extern "C" {
-#endif
-JNIEXPORT void JNICALL Java_com_crab_test_apuedemo_jni_HelloJni_sayHello
-        (JNIEnv *env, jclass clazz){
-    __android_log_print(ANDROID_LOG_ERROR, TAG, "Native say Hello World.");
+package com.crab.test.apuedemo.jni;
+
+public class ChapterOneJni {
+    static {
+        System.loadLibrary("chapterOneJni");
+    }
+
+    public static void ls() {
+        ls("/sdcard");
+    }
+
+    public static native void ls(String path);
+
+    public static native void io();
+
+    public static native void printPid();
+
+    public static native void perror();
+
+    public static native void printUidAndGid();
+
+    public static native void signal();
 }
-#ifdef __cplusplus
-}
-#endif
