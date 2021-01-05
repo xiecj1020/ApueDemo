@@ -23,7 +23,12 @@
             </intent-filter>
         </activity>
         <activity
+            android:screenOrientation="portrait"
             android:name=".ChapterOneActivity">
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".ChapterTwoActivity">
         </activity>
     </application>
 

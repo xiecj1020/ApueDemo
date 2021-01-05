@@ -16,44 +16,40 @@
 
 package com.crab.test.apuedemo;
 
-import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 
-import com.crab.test.apuedemo.jni.HelloJni;
+import com.crab.test.apuedemo.jni.ChapterTwoJni;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AbsListActivity<String> {
-
+public class ChapterTwoActivity extends AbsListActivity<String> {
     @Override
     public List<String> getListData() {
-        ArrayList<String> lists = new ArrayList<>();
-        lists.add("HelloJni");
-        lists.add("Chapter One");
-        lists.add("Chapter two");
-        return lists;
+        ArrayList<String> list = new ArrayList<>();
+        list.add("2.2.1 isoc");
+        list.add("2.2.2 IEEE POSIX");
+        list.add("2.5.1 isoc limits");
+        list.add("2.5.2 posix limits");
+        return list;
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = null;
         switch (position) {
             case 0:
-                HelloJni.sayHello();
+                ChapterTwoJni.isoc();
                 break;
             case 1:
-                intent = new Intent(this, ChapterOneActivity.class);
+                ChapterTwoJni.posix();
                 break;
             case 2:
-                intent = new Intent(this, ChapterTwoActivity.class);
+                ChapterTwoJni.isocLimits();
                 break;
-            default:
-                intent = null;
-        }
-        if (intent != null) {
-            startActivity(intent);
+            case 3:
+                ChapterTwoJni.posixLimits();
+                break;
         }
     }
 }

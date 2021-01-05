@@ -36,7 +36,7 @@ public class ChapterOneActivity extends AbsListActivity<String> {
         list.add("1.6.1 printPid");
         list.add("1.7 perror");
         list.add("1.8 uid,gid");
-        list.add("1.8 signal");
+        list.add("1.9 signal");
         return list;
     }
 
