@@ -34,6 +34,10 @@
             android:screenOrientation="portrait"
             android:name=".ChapterThreeActivity">
         </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".ChapterFourActivity">
+        </activity>
     </application>
 
 </manifest>
