@@ -35,6 +35,7 @@ public class MainActivity extends AbsListActivity<String> {
         lists.add("Chapter Two");
         lists.add("Chapter Three");
         lists.add("Chapter Four");
+        lists.add("Chapter Five");
         return lists;
     }
 
@@ -56,6 +57,9 @@ public class MainActivity extends AbsListActivity<String> {
                 break;
             case 4:
                 intent = new Intent(this, ChapterFourActivity.class);
+                break;
+            case 5:
+                intent = new Intent(this, ChapterFiveActivity.class);
                 break;
             default:
                 intent = null;
