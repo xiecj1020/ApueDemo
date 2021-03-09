@@ -30,15 +30,16 @@ public class MainActivity extends AbsListActivity<String> {
     @Override
     public List<String> getListData() {
         ArrayList<String> lists = new ArrayList<>();
-        lists.add("HelloJni");
-        lists.add("Chapter One");
-        lists.add("Chapter Two");
-        lists.add("Chapter Three");
-        lists.add("Chapter Four");
-        lists.add("Chapter Five");
-        lists.add("Chapter Six");
-        lists.add("Chapter Seven");
-        lists.add("Chapter Eight");
+        lists.add("0: HelloJni");
+        lists.add("1: Unix基础知识");
+        lists.add("2: Unix标准及实现");
+        lists.add("3: 文件IO");
+        lists.add("4: 文件和目录");
+        lists.add("5: 标准IO库");
+        lists.add("6: 系统数据文件和信息");
+        lists.add("7: 进程环境");
+        lists.add("8: 进程控制");
+        lists.add("9: 进程关系");
         return lists;
     }
 
@@ -72,6 +73,9 @@ public class MainActivity extends AbsListActivity<String> {
                 break;
             case 8:
                 intent = new Intent(this, ChapterEightActivity.class);
+                break;
+            case 9:
+                intent = new Intent(this, ChapterNineActivity.class);
                 break;
             default:
                 intent = null;

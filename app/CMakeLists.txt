@@ -86,6 +86,15 @@ add_library( # Specifies the name of the library.
         # Provides a relative path to your source file(s).
         src/main/cpp/ChapterEightJni.cpp)
 
+add_library( # Specifies the name of the library.
+        chapterNineJni
+
+        # Sets the library as a shared library.
+        SHARED
+
+        # Provides a relative path to your source file(s).
+        src/main/cpp/ChapterNineJni.cpp)
+
 include_directories(src/main/cpp/include/)
 find_library( # Defines the name of the path variable that stores the
               # location of the NDK library.
@@ -129,5 +138,9 @@ target_link_libraries( # Specifies the target library.
         ${log-lib} )
 target_link_libraries( # Specifies the target library.
         chapterEightJni
+        # Links the log library to the target library.
+        ${log-lib} )
+target_link_libraries( # Specifies the target library.
+        chapterNineJni
         # Links the log library to the target library.
         ${log-lib} )
