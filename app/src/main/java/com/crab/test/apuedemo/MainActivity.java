@@ -40,6 +40,7 @@ public class MainActivity extends AbsListActivity<String> {
         lists.add("7: 进程环境");
         lists.add("8: 进程控制");
         lists.add("9: 进程关系");
+        lists.add("10: 信号");
         return lists;
     }
 
@@ -76,6 +77,9 @@ public class MainActivity extends AbsListActivity<String> {
                 break;
             case 9:
                 intent = new Intent(this, ChapterNineActivity.class);
+                break;
+            case 10:
+                intent = new Intent(this, ChapterTenActivity.class);
                 break;
             default:
                 intent = null;

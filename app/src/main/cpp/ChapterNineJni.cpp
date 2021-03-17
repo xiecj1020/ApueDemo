@@ -21,7 +21,7 @@
 #include <unistd.h>
 #include <signal.h>
 
-#include "include/com_crab_test_apuedemo_jni_ChapterEightJni.h"
+#include "include/com_crab_test_apuedemo_jni_ChapterNineJni.h"
 
 #define TAG "mytag"
 
