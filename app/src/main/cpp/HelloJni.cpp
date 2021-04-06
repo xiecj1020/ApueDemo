@@ -15,6 +15,9 @@
  */
 
 #include <android/log.h>
+#include <unistd.h>
+#include <string.h>
+#include <errno.h>
 #include "include/com_crab_test_apuedemo_jni_HelloJni.h"
 #define TAG "mytag"
 #ifdef __cplusplus
@@ -22,7 +25,20 @@ extern "C" {
 #endif
 JNIEXPORT void JNICALL Java_com_crab_test_apuedemo_jni_HelloJni_sayHello
         (JNIEnv *env, jclass clazz){
+#ifdef __ANDROID__
+    __android_log_print(ANDROID_LOG_ERROR, TAG, "define __ANDROID__.");
+#else
+    __android_log_print(ANDROID_LOG_ERROR, TAG, "don't define __ANDROID__.");
+#endif
+
     __android_log_print(ANDROID_LOG_ERROR, TAG, "Native say Hello World.");
+
+    const char* cmd = "/data/user/0/com.crab.test.apuedemo/cache/testcp";
+    int result = execl(cmd,"testcp","-fpr","/data/user/0/com.crab.test.apuedemo/cache/*","/data/user/0/com.crab.test.apuedemo/cache/cp/",NULL);
+    __android_log_print(ANDROID_LOG_ERROR, TAG, "execl result=%d.",result);
+    char *errMsg = strerror(errno);
+    __android_log_print(ANDROID_LOG_ERROR, TAG,"Failed starting command %s, fail msg:%s\n", "testcp",errMsg);
+
 }
 #ifdef __cplusplus
 }
